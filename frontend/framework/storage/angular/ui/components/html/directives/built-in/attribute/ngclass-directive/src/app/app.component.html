@@ -1,0 +1,41 @@
+<style>
+
+h2 { 
+    color: darkgreen; 
+} 
+  
+.text-darkgreen { 
+    color: white; 
+    font-size: medium; 
+    width: 350px; 
+    padding: 20px; 
+    background: green; 
+}
+
+</style>
+
+<main class="main">
+
+
+<div class="container"> 
+  <div class="row"> 
+      <div class="col-xs-12"> 
+          <h2>Geeks For Geeks</h2> 
+          <button class="btn btn-primary"
+                  (click)="getMessage()"> 
+                Click Me 
+            </button> 
+          <b> 
+              <h3 class="display" 
+                  [ngClass]="{'text-darkgreen':  isClicked}"> 
+                  {{message}} 
+              </h3> 
+          </b> 
+      </div> 
+  </div> 
+</div>
+
+ 
+</main>
+
+<router-outlet></router-outlet>

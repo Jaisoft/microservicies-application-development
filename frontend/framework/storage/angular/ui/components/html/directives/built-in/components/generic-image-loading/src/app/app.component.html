@@ -1,0 +1,15 @@
+<ng-container *ngIf="currentData && currentData.length">
+  <div *ngFor="let data of currentData; let i = index">
+    <app-image-loader
+      [alt]="data.title"
+      [id]="'id-'+data.id"
+      [imageLoading]="data.imageLoading"
+      [imageLoadingUrl]="'https://media.tenor.com/images/f864cbf3ea7916572605edd3b3fe637f/tenor.gif'"
+      [imageUrl]="data.thumbnailUrl"
+      [noImageUrl]="'https://via.placeholder.com/150'"
+      [imageHeight]="'100'"
+      [imageWidth]="'100'"
+    >
+    </app-image-loader>
+  </div>
+</ng-container>

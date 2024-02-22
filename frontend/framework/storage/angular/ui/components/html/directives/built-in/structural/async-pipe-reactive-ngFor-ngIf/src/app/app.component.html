@@ -1,0 +1,9 @@
+
+    <div *ngIf="(pizzas$ | async) as pizzas">
+      <p>🍕 {{ pizzas.length }} Pizzas!</p>
+      <ul>
+        <li *ngFor="let pizza of pizzas; index as i">
+          {{ i + 1 }}. {{ pizza.name }}
+        </li>
+      </ul>
+    </div>

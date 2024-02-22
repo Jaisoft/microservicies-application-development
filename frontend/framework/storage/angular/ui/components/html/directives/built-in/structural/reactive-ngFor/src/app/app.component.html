@@ -1,0 +1,9 @@
+
+<div>
+   <p>🍕 Pizza Store</p>
+      <ul>
+        <li *ngFor="let pizza of pizzas$ | async; index as i">
+          {{ i + 1 }}. {{ pizza.name }}
+        </li>
+      </ul>
+    </div>

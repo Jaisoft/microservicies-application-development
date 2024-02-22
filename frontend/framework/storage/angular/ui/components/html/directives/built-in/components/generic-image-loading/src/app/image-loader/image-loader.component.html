@@ -1,0 +1,13 @@
+<ng-container>
+    <img
+      [src]="imageLoading ? imageLoadingUrl : imageUrl"
+      [alt]="alt"
+      [id]="imageId"
+      (load)="onImageLoaded()"
+      (error)="handleEmptyImage()"
+      loading="lazy"
+      [ngClass]="imageClass"
+      [height]="imageHeight"
+      [width]="imageWidth"
+    />
+  </ng-container>

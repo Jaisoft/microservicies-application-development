@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "pepe": {
+      "description": "A blank schematic.",
+      "factory": "./pepe/index#pepe"
+    }
+  }
+}
