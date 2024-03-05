@@ -1,0 +1,64 @@
+stages:
+  - build
+  - test
+  - deploy
+
+backend-build:
+  stage: build
+  needs: []
+  only:
+    changes:
+      - "back/**/*" 
+  #extends: .backend
+  script:
+    - echo "Compiling the backend code..."
+
+frontend-build:
+  stage: build
+  #needs: []
+  only:
+    changes:
+      - "front/**/*" 
+  #extends: .frontend
+  script:
+    - echo "Compiling the frontend code..."
+
+backend-test:
+  stage: test
+  only:
+    changes:
+      - "back/**/*" 
+  #extends: .backend
+  needs: ["backend-build"]
+  script:
+    - echo "Testing the backend code..."
+
+frontend-test:
+  stage: test
+  only:
+    changes:
+      - "front/**/*"
+  #extends: .frontend
+  #needs: [frontend-build]
+  script:
+    - echo "Testing the frontend code..."
+
+backend-deploy:
+  stage: deploy
+  only:
+    changes:
+      - "back/**/*" 
+  #extends: .backend
+  needs: [backend-test]
+  script:
+    - echo "Deploying the backend code..."
+
+frontend-deploy:
+  stage: deploy
+  only:
+    changes:
+      - "front/**/*"
+  #extends: .frontend
+  #needs: [frontend-test]
+  script:
+    - echo "Deploying the frontend code..."
