@@ -1,0 +1,35 @@
+<div class="container">
+  <section>
+    <h2>Register</h2>
+      <mat-form-field class="username-input">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput [formControl]="registerFormControl">
+        <mat-error *ngIf="registerFormControl.hasError('required')">Username is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="first-name-input">
+        <mat-label>First name</mat-label>
+        <input type="text" matInput [formControl]="registerFormControl">
+        <mat-error *ngIf="registerFormControl.hasError('required')">First name is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="email-input">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="YourEmail@email.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="age-input">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput [formControl]="registerFormControl">
+        <mat-error *ngIf="registerFormControl.hasError('required')">Age is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>Password</mat-label>
+        <input matInput [formControl]="registerFormControl" [type]="hide ? 'password' : 'text'">
+        <mat-error *ngIf="registerFormControl.hasError('required')">Password is <strong>required</strong></mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button>Register</button>
+  </section>
+</div>
