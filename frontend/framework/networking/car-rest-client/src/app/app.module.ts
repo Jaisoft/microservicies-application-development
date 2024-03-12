@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { BugService } from './bug.services';
+import { CarService } from './car.services';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { BugService } from './bug.services';
     FormsModule,
     HttpClientModule
   ],
-  providers: [BugService],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
