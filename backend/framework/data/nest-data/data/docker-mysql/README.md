@@ -4,7 +4,11 @@ dc -f mysql.yaml stop
 
 dc -f mysql.yaml down
 
+docker compose up
+
 mysql-client:
+
+		mysql -h localhost -P 3306 --protocol=tcp -u myuser -p
         
         mysql -hlocalhost -P3306 -uroot -pexample --protocol=tcp
         
