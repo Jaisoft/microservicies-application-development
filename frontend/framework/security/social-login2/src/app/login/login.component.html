@@ -1,0 +1,18 @@
+<div class="container">
+  <section>
+    <h2>Log in</h2>
+      <mat-form-field class="email-input">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput [formControl]="loginFormControl" placeholder="YourEmail@email.com">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button>Log in</button>
+      <p>If you don't have an account with us <a [routerLink]="[ '/register' ]">register here</a></p>
+  </section>
+</div>
